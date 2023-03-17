@@ -1,27 +1,33 @@
-<html lang="es">
+<!DOCTYPE html>
+<html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>WORDLE</title>
-    <link rel="stylesheet" href="/css/style.css">
-
+    <link rel="stylesheet" href="./dist/output.css">
+    <title>TodoList</title>
 </head>
-<body>
-    <h1>WORDLE</h1>
-    <main class="main-container">
-      <h2 class="loading">Cargando...</h2>
-        <div class="row" id="1">
-            <!-- <input type="text" maxlength="1" class="square"> -->
+<body class="bg-slate-900 text-white grid place-content-center" >
+    <main class="w-screen sm:w-96 h-auto  px-6 ">
+        <h1 class="mt-44 mb-4 text-4xl text-center font-bold">TO-DO-LIST</h1>
+
+        <form id="userInput" action="#" class="w-80 h-auto my-8 flex gap-2 px-1 text-slate-900">
+            <input id="input" class="w-4/5 h-12 rounded-lg px-3 outline-none text-xl font-medium" type="text" placeholder="Escribe tu tarea aqui..">
+            <input id="addbtn" class="w-12 h-12 cursor-pointer  rounded-full bg-white outline-none  font-bold text-4xl hover:bg-slate-700 hover:text-white" type="submit" value="+" >
+        </form>
+
+        <div id="list" class="tarea">
+            
+           
+        </div>
+
+       
+
+
+        <div id="stats" class="text-center text-xl mt-7">
+            <!-- <p>Tareas pemdientes:5 tareas listas:3</p> -->
         </div>
     </main>
-    <div class="result">
-        <!-- <p>Ganaste!</p>
-        <button class="btn">Reiniciar</button> -->
-    </div>
-    <footer>
-
-    </footer>
-    <script src="/main.js"></script>
+    <script src="./main.js" > </script>
 </body>
 </html>
