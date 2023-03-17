@@ -3,113 +3,164 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>BlogDeCafe</title>
-    <link rel="preload" href="css/normalize.css">
-    <link rel="stylesheet" href="css/normalize.css" as="style">
-    
-    <link rel="preload" href="css/style.css">
-    <link rel="stylesheet" href="css/style.css" as="style">
-    
-    <link rel="preload" href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap"  crossorigin="crossorigin" as="font">
-    <link href="https://fonts.googleapis.com/css2?family=Open+Sans&family=PT+Sans:wght@400;700&display=swap" rel="stylesheet">
-
+    <title>Frontend-Store</title>
+    <link rel="preload" href="css/normalize.css" as="style">
+    <link rel="preload" href="css/stye.css" as="style">
+    <link rel="stylesheet" href="css/stye.css">
+    <link rel="stylesheet" href="css/normalize.css">
+    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
 </head>
 <body>
-    <header class="header" >
-        <div class="contenedor">
-            <div class="barra">
-                <a class="logo" href="index.html">
-                    <h1 class="logo__nombre no-margin centrar-texto">Blog<span class="logo__bold">DeCafé</span></h1>
-                </a>
-                <nav class="navbar">
-                    <a href="nosotros.html" class="navbar__a">Nosotros</a>
-                    <a href="cursos.html" class="navbar__a">Cursos</a>
-                    <a href="contacto.html" class="navbar__a">Contacto</a>
-                </nav>
-            </div>
-        </div>
-        <div class="header__texto">
-            <h2 class="no-margin">Blog de Café consejos y Cursos</h2>
-            <p class="no-margin">Aprende de los expertos con las mejores recetas y consejos </p>
-        </div>
+    <header class="header">
+            <a href="index.html">
+                <img class="header__logo" src="img/logo.png" alt="">
+            </a>
     </header>
-    <div class="contenedor contenido-principal">
-        <main class="blog">
-            <h3>Nuestro Blog</h3>
-            <article class="entrada">
-                <div class="entrada__img">
-                    <img src="img/blog1.jpg" alt="imagen blog" loading="lazy">
-                </div>
-                <div class="entrada__contenido">
-                    <h4 class="no-margin">Tipos de grano de café</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and 
-                        typesetting industry. 
-                    </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
-                </div>
-            </article>
-            <article class="entrada">
-                <div class="entrada__img">
-                    <img src="img/blog2.jpg" alt="imagen blog" loading="lazy">
-                </div>
-                <div class="entrada__contenido">
-                    <h4 class="no-margin">3 Deliciosas Recetas de Café</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and 
-                        typesetting industry. 
-                    </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
-                </div>
-            </article>
-            <article class="entrada">
-                <div class="entrada__img">
-                    <img src="img/blog3.jpg" alt="imagen blog">
-                </div>
-                <div class="entrada__contenido">
-                    <h4 class="no-margin">Beneficios del Café</h4>
-                    <p>Lorem Ipsum is simply dummy text of the printing and 
-                        typesetting industry. 
-                    </p>
-                    <a href="entrada.html" class="boton boton--primario">Leer Entrada</a>
-                </div>
-            </article>
-        </main>
-        <aside class="sidebar">
-            <h3>Cursos y talleres</h3>
-            <ul class="cursos  no-pading">
-                <li class="widget-cursos">
-                    <h4 class="no-margin">Tecnicas de Extraccion de Café</h4>
-                    <p class="widget-curso__label">Precio: 
-                        <span class="widget-curso__inf">Gratis</span>
-                    </p>
-                    <p class="widget-curso__label">cupo:<span class="widget-curso__inf">20</span></p>
-                    <a href="cursos.html" class="boton boton--secundario">Mas Informacion</a>
-                </li>
-                <li class="widget-cursos">
-                    <h4 class="no-margin">4 Recetas para principiantes</h4>
-                    <p class="widget-curso__label">Precio: 
-                        <span class="widget-curso__inf">Gratis</span>
-                    </p>
-                    <p class="widget-curso__label">cupo:<span class="widget-curso__inf">20</span></p>
-                    <a href="cursos.html" class="boton boton--secundario">Mas Informacion</a>
-                </li>
-            </ul>
-        </aside>
-    </div>
-    <footer class="footer">
-        <div class="contenedor">
-            <div class="barra">
-                <a class="logo no-margin centrar-texto" href="index.html">
-                    <h1 class="logo__nombre">Blog<span class="logo__bold">DeCafé</span> </h1>
+    <nav class="navbar">
+        <a class="navbar__a navbar__a--activo" href="#">Tienda</a>
+        <a class="navbar__a" href="nosotros.html">Nosotros</a>
+    </nav>
+    <main class="contenedor">
+        <h1>Nuestros Productos</h1>
+
+        <div class="grid">
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/1.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">VueJS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
                 </a>
-                <nav class="navbar">
-                    <a href="nosotros.html" class="navbar__a">Nosotros</a>
-                    <a href="cursos.html" class="navbar__a">Cursos</a>
-                    <a href="contacto.html" class="navbar__a">Contacto</a>
-                </nav>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/2.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">AngularJS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/3.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">ReactJS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/4.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">Redux</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/5.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">Node.js</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/6.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">SASS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/7.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">HTML5</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/8.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">Github</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/9.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">BulmaCSS</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/10.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">TypeScript</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/11.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">Drupal</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/12.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">JavaScript</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/13.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">GraphQL</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="producto">
+                <a href="producto.html">
+                    <img class="producto__img" src="img/14.jpg" alt="imagen camisa">
+                    <div class="producto__inf">
+                        <p class="producto__nombre">WordPress</p>
+                        <p class="producto__precio">$25</p>
+                    </div>
+                </a>
+            </div>  <!--.producto-->
+            <div class="grafico grafico--camisas">
+
             </div>
+            <div class="grafico grafico--node">
+
+            </div>
+          
         </div>
-
+    </main>
+    <footer class="footer">
+        <p>Frontend Store-Todos los derechos Reservados 2022</p>
     </footer>
-
 </body>
 </html>
