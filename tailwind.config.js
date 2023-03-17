@@ -1,21 +1,31 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
-  content: ["index.html"],
+  content: ["./index.html"],
   theme: {
     extend: {
+      fontFamily:{
+        'Poppins':'Poppins'
+      },
       colors:{
-        'blue/dark':'#0A3871',
-        'Lightgray':'#D8DFE8',
-        'bg':'#E5E5E5',
-        'Gray400':'#495057',
-        'Gray500':'#343A40',
+        'Red':'hsl(0, 100%, 74%)',
+        'redShadow':'rgba(192, 92, 92, 0.548)',
+        'Green':'hsl(154, 59%, 51%)',
+        'Blue':'hsl(248, 32%, 49%)',
+        'BlueShadow':'rgba(97, 85, 172, 0.373)',
+        'DarkBlue':'hsl(249, 10%, 26%)',
+        'GrayishBlue':'hsl(246, 25%, 77%)',
+      },
+      backgroundImage:{
+        'fondoM':"url('/images/bg-intro-mobile.png')"
       },
       width:{
-        '664':'664px',
-        '332':'332px',
+        '375':'375px',
+        '500':'500px'
       },
-      height:{
-        'tablet':'500px',
+      boxShadow:{
+        'ShadowBlue': '0px 6px 0px rgba(97, 85, 172, 0.373)',
+        'RedShadow': '0px 6px 0px rgba(192, 92, 92, 0.548)',
+        'GreenShadow':'0px 5px 0px 0px rgb(55, 190, 132)'
       }
     },
   },

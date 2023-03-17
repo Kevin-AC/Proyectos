@@ -1,47 +1,39 @@
-<!DOCTYPE html>
 <html lang="en">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
     <link rel="stylesheet" href="./dist/output.css">
-    <title>Encriptardor</title>
+    <title>Formulario</title>
 </head>
-<body class="grid place-items-center bg-bg">
-    <main class="relative w-screen px-4 md:px-10 xl:px-0 xl:h-screen xl:mx-0 xl:flex xl:justify-center  ">
-        <img class="mt-6  md:mt-20 md:ml-0 xl:mt-10 xl:ml-20 md:absolute xl:absolute xl:top-0 xl:left-0" src="./img/Vector.png" alt="logo">
-        <section class="mt-16 w-full md:mt-60 md:h-tablet xl:mt-28 xl:w-3/5 xl:h-auto xl:ml-44 relative  ">
-            <textarea id="inputText" class=" resize-none w-full xl:w-664 h-auto bg-bg outline-none text-blue/dark placeholder:text-blue/dark text-3xl " name="" id="" cols="30" rows="10" placeholder="Ingrese el texto aqui"></textarea>
-            
-            <div class="xl:absolute xl:bottom-3 mb-16 xl:mb-0 ">
-                <div class="flex gap-2 align-middle mb-4">
-                    <img src="./img/Alert.svg" alt="alertIcon" width="15">
-                    <p id="error" class="text-xs text-Gray400 ">Solo letras minúsculas y sin acentos</p>
-                </div>
-                <div class="flex flex-col md:flex-row xl:flex-row gap-4 mb-5  justify-center items-center ">
-                    <button id="btnE" class="botones">Encriptar</button>
-                    <button id="btnD" class="botones bg-Lightgray text-blue/dark ">Desencriptar</button>
-                </div>
-            </div>  
-        </section>
-
-        <section class="w-full mb-10  xl:w-96 h-auto xl:my-5 bg-white p-6 rounded-3xl xl:mr-6 relative  ">
-            <div class="   mt-4  text-center " id="contentEnc">
-                <img class="mt-10 mx-auto hidden xl:inline" src="./img/Muñeco.png" alt="muñeco">
-                <h1 class="text-2xl mt-2 mb-6 text-Gray500 px-6">Ningún mensaje fue encontrado</h1>
-                <p class="w-full h-auto  text-gray-400 text-center ">Ingresa el texto que desees encriptar o desencriptar</p>
+<body class="font-Poppins max-w-max mx-auto bg-Red bg-fondoM lg:grid lg:place-content-center " >
+    <main class="w-375 text-white p-6 lg:p-0 lg:w-full lg:flex lg:items-center lg:justify-center lg:mb-6 ">
+        <div class="text-center lg:text-left  lg:pt-16 lg:pl-20">
+            <h1 class="text-2xl font-bold mb-5 p-3 lg:p-0 lg:pr-24 lg:text-5xl ">Learn to code by watching others</h1>
+            <p class="text-base mb-9 font-medium lg:pr-32">
+                See how experienced developers solve problems in real-time.
+                 Watching scripted tutorials is great, 
+                but understanding how developers think is invaluable.</p>
+        </div>
+        <section class="lg:pr-14 lg:pl-10 ">
+            <div class="bg-Blue w-full h-20 py-0 text-center grid place-content-center rounded-xl mb-5 shadow-ShadowBlue ">
+                <p> <span class="font-bold">Try it free 7</span> days then $20/mo. thereafter</p>
             </div>
-
-            <div class="hidden my-7 md:p-4 xl:p-0" id="msjResult">
-                <p id="result" class="text-2xl w-full text-Gray400 mb-6 mx-1">
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit.
-                     Orci montes, sit et diam risus scelerisque vitae est. 
-                     Tortor maecenas nunc ut laoreet. Eget diam mauris quam quisque ut eget 
-                     fringilla sit elit. Libero, sodales duis fames id diam feugiat aliquet non egestas.</p>
-                <button id="btnC" class="botones bg-white text-blue/dark w-full xl:w-332 md:mt-8 xl:absolute xl:bottom-3 xl:mx-auto xl:left-0 xl:right-0  ">Copiar</button>
+            <div class="bg-white p-4 rounded-xl shadow-RedShadow lg:w-500">
+                <form>
+                    <input class="imput"type="text" name="" id="" placeholder="First Name">
+                    <input class="imput"type="text" name="" id="" placeholder="Last Name">
+                    <input class="imput"type="text" name="" id="" placeholder="Email Address">
+                    <input class="imput"type="text" name="" id="" placeholder="Password">
+                    <input class="w-full h-14 uppercase font-medium text-lg cursor-pointer bg-Green rounded-lg  shadow-GreenShadow" type="submit" name="" id="" value="Claim Your Free Trial">
+                </form>
+                <p class="text-GrayishBlue text-xs font-semibold text-center p-3 ">By clicking the button, you are agreeing to our <span class="text-Red cursor-pointer">Terms and Services</span></p>
             </div>
         </section>
     </main>
-    <script src="./main.js"></script>
+    <footer>
+        <p class="text-white font-bold text-xs text-center mb-2 lg:mb-0">Coded by <a class="text-Blue" href="">Kevin Argumedo.</a> </p>
+    </footer> 
 </body>
 </html>
