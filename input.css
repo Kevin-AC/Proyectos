@@ -1,0 +1,8 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
+@import 'animate.css';
+@tailwind base;
+@tailwind components;
+    .info{
+        @apply  w-52 h-28 xl:h-52 text-center  animate__animated animate__slideInUp rounded-lg flex flex-col justify-center items-center text-White text-4xl font-semibold p-4 
+    }
+@tailwind utilities;
