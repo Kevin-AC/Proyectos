@@ -4,40 +4,61 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="./dist/output.css">
-    <title>App Clima</title>
+    
+    <link rel="stylesheet" href="/dist/output.css">
+    <title>Calculadora</title>
 </head>
-<body class="bg-fondo bg-cover bg-no-repeat grid place-content-center min-h-screen font-roboto">
-    <main class="w-screen h-auto flex flex-col justify-center items-center gap-4 mt-8 px-5 xl:px-0">
-        <form id="form" class="relative mb-12 xl:mb-0 animate__animated animate__fadeInDown">
-            <input id="inputB" class="w-full  sm:w-72 h-10 rounded-lg outline-none pl-4 pr-9 text-center text-Gunmetal text-2xl font-semibold" type="text" name="">
-            <button id="btnB" type="submit" class="absolute z-50 right-2 top-2 transition ease-in-out delay-150 hover:scale-125 " ><img src="./img/search.svg" width="25" alt="search icon"></button>
-        </form>
-        
-        <section class="flex flex-wrap sm:flex-none gap-4 xl:gap-8 justify-center items-center ">
-            <div class=" info ">
-                <p id="city">No data</p>
-                <p id="country" class="text-xl">No data</p>
-                <img id="imgIcon" class="mb-3 " src="">
-            </div>
-
-            <div class=" info md:-order-1">
-                <p id="temp">0°C</p>
-                <p id="Conditions" class="text-xl ">No data</p>
-            </div>
-            
+<body class="bg-fondo grid place-content-center min-h-screen">
+    <main id="container" class="bg-gray-900 w-80 h-auto rounded-2xl px-6 py-4 drop-shadow-2xl">
+        <div class="mb-3 px-2 flex items-end justify-end">
+            <button id="togglebtn">
+                <img id="img1" class="transition-all ease-out delay-100 hover:scale-105" src="./img/light-mode.svg" width="25px">
+                <img id="img2" class="hidden transition-all ease-out delay-100 hover:scale-105" src="./img/dark-mode.svg" width="25px">
+            </button>
            
-            <div class=" info ">
-                <p class="text-xl">Wind Today</p>
-                <p id="windSpeed">0.00 m/s</p>
-     
-             </div>
-        </section>
-        
+        </div>
+        <div id="display-screen" class="w-full h-36 bg-slate-800  rounded-xl flex items-end justify-end" >
+            <p id="screen" class=" text-white text-4xl p-2 font-extrabold"></p>
+        </div>
+        <div id="buttons" class="my-4 grid place-content-center text-lg text-white font-medium">
+            <table>
+                <tr>
+                   <td><button id="clear" class="buton bg-red-500">C</button></td> 
+                   <td><button id="division" class="buton bg-sky-700">/</button></td> 
+                   <td><button id="multipli" class="buton bg-sky-700 ">*</button></td> 
+                   <td><button id="backspace" class="buton bg-sky-700">❰</button></td> 
+                </tr>
+                <tr >
+                    <td><button id="7" class="buton">7</button></td> 
+                    <td><button id="8" class="buton">8</button></td> 
+                    <td><button id="9" class="buton">9</button></td> 
+                    <td><button id="-" class="buton bg-sky-700">-</button></td> 
+                 </tr>
+                 <tr >
+                    <td><button id="4" class="buton">4</button></td> 
+                    <td><button id="5" class="buton">5</button></td> 
+                    <td><button id="6" class="buton">6</button></td> 
+                    <td><button id="+" class="buton bg-sky-700">+</button></td> 
+                 </tr>
+                 <tr>
+                    <td><button id="1" class="buton">1</button></td> 
+                    <td><button id="2" class="buton">2</button></td> 
+                    <td><button id="3" class="buton">3</button></td>  
+                    <td rowspan="2"><button id="=" class="buton h-28 bg-cyan-600">=</button> </td>   
+                 </tr>
+                 <tr >
+                    <td><button id="." class="buton">.</button></td> 
+                    <td><button id="0" class="buton">0</button></td> 
+                    <td><button id="00" class="buton">00</button></td> 
+                 </tr>
+                 
+            </table>
+        </div>
+       
     </main>
-    <footer class="text-center text-xs mt-14 text-white  animate__animated animate__fadeInDown">
+    <footer class="text-center text-xs mt-5 text-slate-900">
         Coded by <a class="font-semibold" target="_blank" href="https://portafolio-kevin-ac.netlify.app/">Kevin Argumedo</a>.
     </footer>
-    <script src="main.js" ></script>
+    <script src="main.js"></script>
 </body>
 </html>

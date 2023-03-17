@@ -1,8 +1,6 @@
-@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:wght@400;700&display=swap');
-@import 'animate.css';
 @tailwind base;
 @tailwind components;
-    .info{
-        @apply  w-52 h-28 xl:h-52 text-center  animate__animated animate__slideInUp rounded-lg flex flex-col justify-center items-center text-White text-4xl font-semibold p-4 
+    .buton{
+        @apply w-14 h-14 m-1 bg-slate-700 rounded-full font-extrabold text-2xl border-none transition-all ease-in-out delay-150 hover:scale-110 hover:shadow-2xl hover:shadow-slate-900
     }
 @tailwind utilities;

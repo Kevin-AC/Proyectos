@@ -4,21 +4,11 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'Gunmetal':'#2d3142',
-        'PayneGray':'#4f5d75',
-        'Silver':'#bfc0c0',
-        'White':'#ffffff',
-        'cfondo':'#FF9D00',
-        'Coral':'#ef8354',
-        'Lime':'#cafe48',
+        'blue':'#0B3142',
       },
       backgroundImage:{
-        'fondo':"url(../img/rainbow-vortex.svg)",
-      },
-      fontFamily:{
-        'roboto':'Roboto Condensed'
+        'fondo':'radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)'
       }
-      
     },
   },
   plugins: [],
