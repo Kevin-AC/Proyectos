@@ -1,88 +1,169 @@
-let openCard=0;
-let card1=null;
-let card2=null;
-let firstResult =null;
-let lastResult=null;
-let movement=0;
-let hits=0;
-let timer=false;
-let time=30;
-let inicialTime=30;
-let countdown0=null;
-//documento html
-let showMovement=document.getElementById('movimiento')
-let showHits=document.getElementById('aciertos')
-let showTimer=document.getElementById('t-restante')
+let resulElement = document.querySelector('.result');
+let rowId =1;
+let mainContainer = document.querySelector('.main-container');//seleccionar el contenedor main
 
-//generacion de numeros aleatorios
-let number = [1,1,2,2,3,3,4,4,5,5,6,6,7,7,8,8];
-number=number.sort(()=>{//generar numeros aleatorios
-    return Math.random()-0.5
-});
-console.log(number)
+//peticion api de palabras
 
-function countTime(){
-    countdown0=setInterval(()=>{
-        time--;
-        showTimer.innerHTML=`Tempo:${time} sg`;
-        if(time==0){
-            clearInterval(countdown0);
-            blockCard();
-        }
-    },1000)
-}
-function blockCard(){
-    for(let i=0;i<=15;i++){
-        let lockedCArd=document.getElementById(i);
-        lockedCArd.innerHTML=number[i];
-        lockedCArd.disabled=true;
+const options = {
+	method: 'GET',
+	headers: {
+		'X-RapidAPI-Key': '6f04666531msh476b0c0d08600a1p12042ejsnafd600cb405c',
+		'X-RapidAPI-Host': '1000-most-common-words.p.rapidapi.com'
+	}
+};
 
+fetch('https://1000-most-common-words.p.rapidapi.com/words/spanish?words_limit=1',options)
+.then(result=>result.json())
+.finally(()=>{
+    let loadingElement = document.querySelector('.loading')
+    loadingElement.style.display = 'none';
+})
+.then(data =>{
+    console.log(data)
+    let word =data[0];
+    let wordArray = word.toUpperCase().split('');
+    
+    let actualRow = document.querySelector('.row');
+    
+    drawSquares(actualRow);
+    listenInput(actualRow);
+    
+    addfocus(actualRow);
+    
+    
+    
+    function listenInput(actualRow){//
+    
+        let squares = actualRow.querySelectorAll('.square');//escuchar sobre la fila actual todo los elementos square
+        squares = [...squares]; /*pasar nodelist a un arreglo*/
+    
+        let userInput=[]
+    
+        squares.forEach(Element => {
+            Element.addEventListener('input',event=>{
+                //si no se ha borrado  
+                if(event.inputType !== 'deleteContentBackward'){
+                    
+                    //Recoger el ingreso del usuario
+                    userInput.push(event.target.value.toUpperCase());//capturar valor ingresado
+                    
+                    if(event.target.nextElementSibling){
+                        event.target.nextElementSibling.focus();//focus pasa cursor al recuadro siguiente
+                    
+                    }else{
+                        let squaresFilled = document.querySelectorAll('.square');
+                        squaresFilled = [...squaresFilled]
+                        let lastFiveSquareFilled = squaresFilled.slice(-word.length);
+                        let finalUserInput = [];
+                        lastFiveSquareFilled.forEach(element =>{
+                            finalUserInput.push(element.value.toUpperCase())
+    
+                        });
+                        
+    
+                        //cambiar estilo si existe la letra pero en posicion incorrecta
+                        let exitsIdexsArrays=existletter(wordArray,finalUserInput);
+                        exitsIdexsArrays.forEach(element => {
+                            squares[element].classList.add('gold');
+                        });
+    
+                        //si no hay mas espacios pasa a comparar los arreglos
+                        let rightIndex = compareArray(wordArray,finalUserInput)//comparar los arrays
+                        console.log(rightIndex);
+                        rightIndex.forEach(element=>{
+                            squares[element].classList.add('green');//pinta de verde los elementos iguales
+                        });
+    
+                        //si los arreglos son iguales
+                        if(rightIndex.length==wordArray.length){
+                            //si la longitud del arreglo de elementos correctos(rightIndex) es igual a la del arreglo original
+                            //entonces e ganado
+                            showResult('Ganaste!')
+                            return; //sale de la funcion
+                        }
+                        
+    
+                        //crear nueva fila
+                        let actualRow=createRow();
+                        if(!actualRow){
+                            return;
+                        }
+                        drawSquares(actualRow);
+                        listenInput(actualRow);
+                        addfocus(actualRow);
+                    }
+                }else{
+                    userInput.pop();
+                }
+            //////////////////////7
+            });
+        })
     }
-}
-
-function destapar(id){
-    if(timer==false){
-        countTime();
-        timer=true;
-    }
-    openCard++;
-    if(openCard==1){
-        //mostrar el primer numero
-        card1=document.getElementById(id);
-        firstResult=number[id]
-        card1.innerHTML=firstResult;
-        //deshabilitar el primer boton
-        card1.disabled=true;
-    }else if(openCard==2){
-        //mostrar segundo numero
-        card2=document.getElementById(id);
-        lastResult=number[id];
-        card2.innerHTML=lastResult;
-        card2.disabled=true;
-        //incrementar movimientos
-        movement++;
-        showMovement.innerHTML=`Movimiento:${movement}`;
-        if(firstResult==lastResult){
-            openCard=0;
-
-            //aumentar aciertos
-            hits++;
-            showHits.innerHTML=`Aciertos:${hits}`;
-            if(hits==8){
-                clearInterval(countdown0);
-                showHits.innerHTML=`Aciertos:${hits}😲`;
-                showTimer.innerHTML=`Bien Echo 🎉 Te demorastes ${inicialTime - time}sg`;
-                showMovement.innerHTML=`Movimiento:${movement}👍`;
+    
+    
+    
+    
+    //funciones
+    function compareArray(Array1,Array2){//comparar los elementos de los arrays
+        let iqualsIndex = [];
+        Array1.forEach((Element,index)=>{
+            if(Element == Array2[index]){
+                console.log(`en la posicion ${index} si son iguales` );
+                iqualsIndex.push(index)
+            }else{
+                console.log(`en la posicion ${index} no son iguales` );
             }
+        });
+        return iqualsIndex;
+    }
+    
+    function existletter(Array1,Array2){
+        //si la letra existe hace un push al arreglo exitsIdexsArrays con el indice de esa letra
+        let exitsIdexsArrays= [];
+        Array2.forEach((element,index)=>{
+            if(Array1.includes(element)){
+                exitsIdexsArrays.push(index);
+            }else{
+    
+            }
+        });
+        return exitsIdexsArrays;
+    }
+    function createRow(){
+        rowId++;//incrementar el id del nuevo div
+        if(rowId<=5){//limitar a 5 la cantidad de filas
+            let newRow = document.createElement('div');//crear un div
+            newRow.classList.add('row');//agregar clase row al div
+            newRow.setAttribute('id',rowId);
+            mainContainer.appendChild(newRow);//agregar al main container newRow
+            return newRow;
         }else{
-            //volver a tapar los valores
-            setTimeout(()=>{
-                card1.innerHTML=' '; 
-                card2.innerHTML=' ';
-                card1.disabled=false;
-                card2.disabled=false;
-                openCard=0;
-            },800)
+            showResult(`Intenta de nuevo, la respuesta correcta era"${word.toUpperCase()}"`);//mensaje cuando pierde
+            
         }
     }
-}
+    
+    function drawSquares(actualRow){
+        wordArray.forEach((item,index)=>{
+            if(index === 0){
+                actualRow.innerHTML += `<input type="text" maxlength="1" class="square focus"></input>`
+            }else{
+                actualRow.innerHTML += `<input type="text" maxlength="1" class="square"></input>`
+            }
+        });
+    }
+    function addfocus(actualRow){
+        let focusElement = actualRow.querySelector('.focus'); 
+        focusElement.focus();
+    }
+    
+    function showResult(textMsg){//ver mensage gano o perdio
+        resulElement.innerHTML=`<p>${textMsg}</p> <button class="btn">Reiniciar</button>`
+    
+        let resetBtn = document.querySelector('.btn')//boton reiniciar 
+        resetBtn.addEventListener('click',()=>{
+             location.reload();
+        });
+    }
+})
+
