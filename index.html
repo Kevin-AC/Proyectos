@@ -1,166 +1,156 @@
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Frontend-Store</title>
-    <link rel="preload" href="css/normalize.css" as="style">
-    <link rel="preload" href="css/stye.css" as="style">
-    <link rel="stylesheet" href="css/stye.css">
-    <link rel="stylesheet" href="css/normalize.css">
-    <link href="https://fonts.googleapis.com/css2?family=Staatliches&display=swap" rel="stylesheet">
+    <title>Freelancer</title>
+    <link rel="stylesheet" href="normalize.css">
+    <link rel="preload" href="normalize.css" as="style">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Krub:wght@400;700&display=swap" rel="stylesheet">
+
+    <link rel="preload" href="styel.css" as="style">
+    <link rel="stylesheet" href="styel.css">
+    
+
 </head>
 <body>
-    <header class="header">
-            <a href="index.html">
-                <img class="header__logo" src="img/logo.png" alt="">
-            </a>
+    <header>
+        <h1 class="titulo">Kevin Argumedo <span>Freelancer</span></h1>
     </header>
-    <nav class="navbar">
-        <a class="navbar__a navbar__a--activo" href="#">Tienda</a>
-        <a class="navbar__a" href="nosotros.html">Nosotros</a>
-    </nav>
-    <main class="contenedor">
-        <h1>Nuestros Productos</h1>
+    <div class="navbag">
+        <nav class="navbarprincipal contenedor">
+            <a href="#">Inicio</a>
+            <a href="#">Sobre mi</a>
+            <a href="#">Clientes</a>
+            <a href="#">Contacto</a>
+        </nav>
 
-        <div class="grid">
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/1.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">VueJS</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/2.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">AngularJS</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/3.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">ReactJS</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/4.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">Redux</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/5.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">Node.js</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/6.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">SASS</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/7.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">HTML5</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/8.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">Github</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/9.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">BulmaCSS</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/10.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">TypeScript</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/11.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">Drupal</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/12.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">JavaScript</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/13.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">GraphQL</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="producto">
-                <a href="producto.html">
-                    <img class="producto__img" src="img/14.jpg" alt="imagen camisa">
-                    <div class="producto__inf">
-                        <p class="producto__nombre">WordPress</p>
-                        <p class="producto__precio">$25</p>
-                    </div>
-                </a>
-            </div>  <!--.producto-->
-            <div class="grafico grafico--camisas">
+    </div>
+    
+    
 
+    <section class="hero">
+        <div class="hero-contenido">
+            <h2>Diseño y desarrollo web<span>Freelancer</span></h2>
+            
+            <div class="ubicacion">
+                <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-current-location" width="88" height="88" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                    <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                    <circle cx="12" cy="12" r="3"></circle>
+                    <circle cx="12" cy="12" r="8"></circle>
+                    <line x1="12" y1="2" x2="12" y2="4"></line>
+                    <line x1="12" y1="20" x2="12" y2="22"></line>
+                    <line x1="20" y1="12" x2="22" y2="12"></line>
+                    <line x1="2" y1="12" x2="4" y2="12"></line>
+                </svg>
+                <p>Apartadó Antioquia</p>
             </div>
-            <div class="grafico grafico--node">
-
-            </div>
-          
+            <a class="boton" href="#">Contactar</a>
         </div>
+    </section>
+
+    <main class="contenedor sombra">
+        <h2>Mis Servicios</h2>
+        <div class="servicios">
+            <section class="servicio">
+                <h3 class="titulo">Diseño web</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-palette" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <path d="M12 21a9 9 0 1 1 0 -18a9 8 0 0 1 9 8a4.5 4 0 0 1 -4.5 4h-2.5a2 2 0 0 0 -1 3.75a1.3 1.3 0 0 1 -1 2.25"></path>
+                        <circle cx="7.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="12" cy="7.5" r=".5" fill="currentColor"></circle>
+                        <circle cx="16.5" cy="10.5" r=".5" fill="currentColor"></circle>
+                     </svg>
+                </div>
+                
+                <p>
+                    Pellentesque odio ex, bibendum quis convallis scelerisque, 
+                    eleifend vitae lectus. Quisque in erat justo.
+                </p>
+            </section>
+            <section class="servicio">
+                <h3>Aplicaciones web</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-brand-android" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <line x1="4" y1="10" x2="4" y2="16"></line>
+                        <line x1="20" y1="10" x2="20" y2="16"></line>
+                        <path d="M7 9h10v8a1 1 0 0 1 -1 1h-8a1 1 0 0 1 -1 -1v-8a5 5 0 0 1 10 0"></path>
+                        <line x1="8" y1="3" x2="9" y2="5"></line>
+                        <line x1="16" y1="3" x2="15" y2="5"></line>
+                        <line x1="9" y1="18" x2="9" y2="21"></line>
+                        <line x1="15" y1="18" x2="15" y2="21"></line>
+                     </svg>
+                     <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-apple" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <circle cx="12" cy="14" r="7"></circle>
+                        <path d="M12 11v-6a2 2 0 0 1 2 -2h2v1a2 2 0 0 1 -2 2h-2"></path>
+                        <path d="M10 10.5c1.333 .667 2.667 .667 4 0"></path>
+                     </svg>
+                </div>  
+                
+                <p>
+                    Pellentesque odio ex, bibendum quis convallis scelerisque, 
+                    eleifend vitae lectus. Quisque in erat justo.
+                </p>
+            </section>
+            <section class="servicio">
+                <h3>E-Commerce</h3>
+                <div class="iconos">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="icon icon-tabler icon-tabler-credit-card" width="24" height="24" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+                        <path stroke="none" d="M0 0h24v24H0z" fill="none"></path>
+                        <rect x="3" y="5" width="18" height="14" rx="3"></rect>
+                        <line x1="3" y1="10" x2="21" y2="10"></line>
+                        <line x1="7" y1="15" x2="7.01" y2="15"></line>
+                        <line x1="11" y1="15" x2="13" y2="15"></line>
+                     </svg>
+                </div>
+                <p>
+                    Pellentesque odio ex, bibendum quis convallis scelerisque, 
+                    eleifend vitae lectus. Quisque in erat justo.
+                </p>
+            </section>
+        </div>
+   
+
+        <section>
+            <h2>Contacto</h2>
+            <form class="formulario">
+                <fieldset >
+                    <legend>Contacto llenando todos los campos</legend>
+                    <div class="contenedor-campos">
+                        <div class="campo">
+                            <label for="">Nombre</label>
+                            <input class="input-text" type="text" name="" id="" placeholder="Tu nombre">
+                        </div>
+                        <div class="campo">
+                            <label for="">Telefono</label>
+                            <input class="input-text"  type="tel" name="" id="" placeholder="Telefono">
+    
+                        </div>
+                        <div class="campo">
+                            <label for="">E-mail</label>
+                            <input class="input-text"  type="email" name="" id=""placeholder="Correo">
+                        </div>
+                        <div class="campo">
+                            <label for="">Mensaje</label>
+                            <textarea class="input-text"  name="" id="" cols="30" rows="10"></textarea>    
+                        </div>
+                    </div>
+                    <div class="alinear-derecha flex">
+                        <input class="boton wd-100" type="submit" value="enviar">
+                    </div>
+
+                </fieldset>
+
+            </form>
+        </section>
     </main>
     <footer class="footer">
-        <p>Frontend Store-Todos los derechos Reservados 2022</p>
+        <p>Kevin Argumedo </p>
     </footer>
 </body>
 </html>
