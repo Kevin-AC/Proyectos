@@ -4,10 +4,18 @@ module.exports = {
   theme: {
     extend: {
       colors:{
-        'blue':'#0B3142',
+        'blue/dark':'#0A3871',
+        'Lightgray':'#D8DFE8',
+        'bg':'#E5E5E5',
+        'Gray400':'#495057',
+        'Gray500':'#343A40',
       },
-      backgroundImage:{
-        'fondo':'radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%)'
+      width:{
+        '664':'664px',
+        '332':'332px',
+      },
+      height:{
+        'tablet':'500px',
       }
     },
   },

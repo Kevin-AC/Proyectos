@@ -1,5 +1,5 @@
 {
-  "name": "calculadora",
+  "name": "encriptador",
   "version": "1.0.0",
   "description": "",
   "main": "main.js",
@@ -10,6 +10,6 @@
   "author": "",
   "license": "ISC",
   "devDependencies": {
-    "tailwindcss": "^3.2.7"
+    "tailwindcss": "^3.2.6"
   }
 }

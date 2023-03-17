@@ -1,36 +1,67 @@
-const screen =document.getElementById('screen');
-const buttons=document.querySelectorAll('.buton')
-const togglebtn=document.getElementById('togglebtn');
+const buttonE=document.getElementById('btnE')
+const buttonD=document.getElementById('btnD')
+const buttonC=document.getElementById('btnC')
+const error=document.getElementById('error')
+const inputText= document.getElementById('inputText')
+const result=document.getElementById('result')
 
-togglebtn.addEventListener('click',()=>{
-    document.getElementById('img1').classList.toggle('hidden')
-    document.getElementById('img2').classList.toggle('hidden')
-    document.getElementById('container').classList.toggle('bg-slate-200')
-    document.getElementById('display-screen').classList.toggle('bg-slate-400')
-    screen.classList.toggle('text-slate-800')
-})
+const content=document.getElementById('contentEnc')
+const msjResult=document.getElementById('msjResult')
 
-buttons.forEach(e=>{
-   e.addEventListener('click',element=>{
+const reglas = { "e":"enter","i":"imes","a":"ai","o":"ober","u":"ufat"};
 
-    let content=element.target.innerText
-   
-    if(content=="C"){
-        screen.innerText=``
-    }else if(content=="❰"){
-        let string=screen.textContent
-        screen.innerText=string.substring(0, string.length -1);
-    }else if(screen.innerText != ""&&content=="="){
-        screen.innerText=eval(screen.innerText)
-        screen.innerText = screen.innerText.slice(0,8);
-    }else if(screen.innerText==''&&content=="="){
-        screen.innerText='null'
-        setTimeout(()=>(screen.innerText=``),1000)
+let valorEncriptado
+let valorD
+
+inputText.addEventListener('input',()=>{
+    value=inputText.value
+    let letras= /[A-Z]/g;
+    let regEx=/[~!@#$%^&*()_+|}{[\]\\\/?><:"`;.,áéíóúàèìòù']/g;
+    if(value.match(letras)||value.match(regEx)){
+        error.classList.add('text-red-700')
+        inputText.classList.add('borde')
     }else{
-        screen.innerText+=content
+        inputText.classList.remove('borde')
+        error.classList.remove('text-red-700')
     }
-       
-   })
+
+
+   
 })
 
+buttonE.addEventListener('click',()=>{
+    ocultar()
+    encriptar(inputText.value)
+})
+
+buttonD.addEventListener('click',()=>{
+    desencriptar(inputText.value)
+})
+
+buttonC.addEventListener('click',()=>{
+    let copia =result.innerText
+    navigator.clipboard.writeText(copia);
+    inputText.value=``
+    
+})
+
+function encriptar(text){
+    for(letra in reglas){
+        valorEncriptado=text=text.replaceAll(letra,reglas[letra])
+    }
+    result.innerText=`${valorEncriptado}`
+}
+
+function desencriptar(text){
+    for(letra in reglas){
+       valorD=text=text.replaceAll(reglas[letra],letra)
+    }
+    result.innerText=`${valorD}`
+}
+
+function ocultar(){
+    
+    content.classList.toggle('hidden')
+    msjResult.classList.toggle('hidden')
+}
 

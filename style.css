@@ -1,0 +1,9 @@
+@tailwind base;
+@tailwind components;
+    .botones{
+        @apply w-332 h-16 text-white rounded-3xl bg-blue/dark border-blue/dark border
+    }
+    .borde{
+        @apply  border-red-700 border-2 rounded-lg
+    }
+@tailwind utilities;
